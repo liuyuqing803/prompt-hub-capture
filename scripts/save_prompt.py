@@ -5,11 +5,12 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import os
 import re
 from pathlib import Path
 
 
-ROOT = Path("/Users/jean/Documents/PromptHub")
+ROOT = Path(os.environ.get("PROMPT_HUB_ROOT", "/Users/jean/Documents/PromptHub")).expanduser()
 PROMPTS_DIR = ROOT / "prompts"
 INDEX_PATH = ROOT / "index" / "prompts-index.md"
 
