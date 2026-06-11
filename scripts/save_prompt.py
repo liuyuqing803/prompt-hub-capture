@@ -10,7 +10,8 @@ import re
 from pathlib import Path
 
 
-ROOT = Path(os.environ.get("PROMPT_HUB_ROOT", "/Users/jean/Documents/PromptHub")).expanduser()
+DEFAULT_ROOT = Path.home() / "Documents" / "PromptHub"
+ROOT = Path(os.environ.get("PROMPT_HUB_ROOT", str(DEFAULT_ROOT))).expanduser()
 PROMPTS_DIR = ROOT / "prompts"
 INDEX_PATH = ROOT / "index" / "prompts-index.md"
 

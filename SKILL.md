@@ -7,7 +7,7 @@ description: Save, classify, and index long prompts into the user's local Prompt
 
 ## Overview
 
-Use this skill to save reusable prompts into `/Users/jean/Documents/PromptHub` as Markdown files with category metadata, tags, usage notes, and an index entry.
+Use this skill to save reusable prompts into the user's local PromptHub as Markdown files with category metadata, tags, usage notes, and an index entry. The save script uses `$PROMPT_HUB_ROOT` when set; otherwise it defaults to `~/Documents/PromptHub`.
 
 ## Workflow
 
@@ -39,10 +39,10 @@ Use `uncategorized` only when the user explicitly asks to save without deciding 
 
 ## Save Command
 
-Use the bundled script from the repository root:
+Use the bundled script from the installed skill directory:
 
 ```bash
-python3 skills/prompt-hub-capture/scripts/save_prompt.py \
+python3 ~/.codex/skills/prompt-hub-capture/scripts/save_prompt.py \
   --title "Prompt title" \
   --category "product" \
   --tags "prd,ai-tutor,product-design" \
@@ -52,6 +52,8 @@ python3 skills/prompt-hub-capture/scripts/save_prompt.py \
 ```
 
 Prefer `--prompt-file` for long prompt text to avoid shell quoting issues.
+
+If the user's PromptHub is not under `~/Documents/PromptHub`, run the same command with `PROMPT_HUB_ROOT=/path/to/PromptHub`.
 
 ## Output Format
 
