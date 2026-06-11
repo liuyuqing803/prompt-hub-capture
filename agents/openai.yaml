@@ -1,0 +1,3 @@
+display_name: Prompt Hub Capture
+short_description: Save reusable prompts into local PromptHub.
+default_prompt: Archive this prompt into my local PromptHub and classify it.
