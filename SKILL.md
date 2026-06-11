@@ -39,10 +39,10 @@ Use `uncategorized` only when the user explicitly asks to save without deciding 
 
 ## Save Command
 
-Use the bundled script from the installed skill directory:
+Use the bundled script from the installed skill directory. If the agent exposes the skill's directory as the current working directory, run:
 
 ```bash
-python3 ~/.codex/skills/prompt-hub-capture/scripts/save_prompt.py \
+python3 scripts/save_prompt.py \
   --title "Prompt title" \
   --category "product" \
   --tags "prd,ai-tutor,product-design" \
@@ -50,6 +50,8 @@ python3 ~/.codex/skills/prompt-hub-capture/scripts/save_prompt.py \
   --rationale "The main use case is product requirements and page design." \
   --prompt-file "/path/to/temp-prompt.txt"
 ```
+
+Otherwise, use the absolute path to the installed `prompt-hub-capture` folder.
 
 Prefer `--prompt-file` for long prompt text to avoid shell quoting issues.
 
